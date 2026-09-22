@@ -1,0 +1,227 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div style="background:#F4F8FC; min-height:100vh; padding:40px;">
+
+    <h1 style="text-align:center;
+               color:#0D47A1;
+               font-family:Cambria;
+               font-weight:bold;
+               margin-bottom:10px;">
+        Contact Us
+    </h1>
+
+    <p style="text-align:center;
+              color:#555;
+              font-size:18px;
+              margin-bottom:30px;">
+        We're here to assist you. Feel free to contact us for appointments,
+        medical services, or any healthcare-related queries.
+    </p>
+
+    <div style="display:flex;
+                justify-content:space-between;
+                gap:20px;
+                margin-bottom:30px;">
+
+        <div style="width:48%;
+                    background:white;
+                    padding:25px;
+                    border-radius:15px;
+                    box-shadow:0px 8px 20px rgba(0,0,0,0.15);">
+
+            <h2 style="color:#0D47A1;">🏥 Hospital Address</h2>
+
+            <p style="line-height:28px;">
+                Government Hospital<br>
+                MG Road, Vijayawada,<br>
+                Andhra Pradesh - 520002
+            </p>
+
+            <hr>
+
+            <h2 style="color:#0D47A1;">📞 Contact Number</h2>
+
+            <p>
+                +91 98765 43210
+            </p>
+
+            <hr>
+
+            <h2 style="color:#0D47A1;">📧 Email Address</h2>
+
+            <p>
+                support@govhospital.com
+            </p>
+
+            <hr>
+
+            <h2 style="color:#0D47A1;">🚑 Emergency Helpline</h2>
+
+            <p style="color:red;
+                      font-size:18px;
+                      font-weight:bold;">
+                108
+            </p>
+
+            <hr>
+
+            <h2 style="color:#0D47A1;">🕘 Hospital Timings</h2>
+
+            <p>
+                OPD : Monday - Saturday <br>
+                9:00 AM - 5:00 PM
+            </p>
+
+            <p>
+                Emergency Services : <br>
+                <b>24 × 7 Available</b>
+            </p>
+
+        </div>
+
+        <div style="width:48%;
+                    background:white;
+                    padding:25px;
+                    border-radius:15px;
+                    box-shadow:0px 8px 20px rgba(0,0,0,0.15);">
+
+            <h2 style="text-align:center;
+                       color:#0D47A1; margin-bottom: 70px; margin-top:50px;" >
+                Send Your Query
+            </h2>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <table style="width:100%;">
+
+                    {{ form.as_table}}
+
+                </table>
+
+                <center>
+
+                <button type="submit"
+                        style="margin-top:20px;
+                               width:180px;
+                               height:45px;
+                               border:none;
+                               border-radius:8px;
+                               background:linear-gradient(to right,#1565C0,#42A5F5);
+                               color:white;
+                               font-size:16px;
+                               font-weight:bold;">
+                    Submit
+                </button>
+
+                </center>
+
+            </form>
+
+        </div>
+        
+    </div>
+    <div style="background:white;
+            margin-top:30px;
+            padding:25px;
+            border-radius:15px;
+            box-shadow:0px 8px 20px rgba(0,0,0,0.15);">
+
+        <h2 style="text-align:center;
+           color:#0D47A1;
+           font-family:Cambria;
+           font-weight:bold;">
+
+        💼 Career Opportunities
+
+        </h2>
+
+        <p style="text-align:center;
+          color:#666;
+          margin-bottom:25px;">
+
+            Explore the latest career opportunities available at Government Hospital.
+
+        </p>
+
+        <table width="100%"
+            cellpadding="12"
+            cellspacing="0"
+            style="border-collapse:collapse;
+            text-align:center;">
+
+             <thead style="background:#1565C0;color:white;">
+
+                <tr>
+
+                    <th>Role</th>
+                    <th>Experience</th>
+                    <th>Current CTC</th>
+                    <th>Notice Period</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for job in job_open_data %}
+
+                <tr style="background:#F8FBFF;">
+
+                    <td style="border:1px solid #ddd;">{{ job.role }}</td>
+                    <td style="border:1px solid #ddd;">{{ job.experience }}</td>
+                    <td style="border:1px solid #ddd;">{{ job.current_ctc }}</td>
+                    <td style="border:1px solid #ddd;">{{ job.notice_period }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        <br>
+
+        <center>
+
+        <a href="/downladcamp/">
+        <button style="width:250px;
+               height:45px;
+               border:none;
+               border-radius:8px;
+               background:linear-gradient(to right,#1565C0,#42A5F5);
+               color:white;
+               font-size:16px;
+               font-weight:bold;">
+
+        ⬇ Download Job Details
+
+        </button>
+
+        </a>
+
+        </center>
+
+    </div>
+
+    <div style="background:white;
+                padding:20px;
+                border-radius:15px;
+                box-shadow:0px 8px 20px rgba(0,0,0,0.15);">
+
+        <h2 style="text-align:center;
+                   color:#0D47A1;">
+            📍 Hospital Location
+        </h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58175.717138027045!2d80.54277154863283!3d16.51333870000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35efe28d658cab%3A0x565d78a632347d3d!2sGovernment%20General%20Hospital!5e1!3m2!1sen!2sin!4v1785772229968!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    </div>
+
+</div>
+
+{% endblock %}

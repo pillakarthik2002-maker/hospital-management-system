@@ -1,0 +1,22 @@
+{%extends 'home.html'%}
+{%block content%}
+  <center> 
+    <table border="2" cellpadding="10" width="98%" style="background-color: hwb(25 18% 2% / 0.941); color: #0b0c0d; font-weight: bold;">  
+        <thead style="background-color: lab(64.29% 48.68 60.18 / 0.941); color: hsl(210, 43%, 97%); font-weight: bold; text-align: center;">
+            <th style="border:2px solid black;">Title</th>
+            <th style="border:2px solid black;">Content</th>
+        </thead>
+        {%for health_tip in health_tips%} 
+        <tbody>
+            <tr>
+                <td style="border:2px solid  black;">{{health_tip.title }}</td>
+                 <td style="border:2px solid black;">{{health_tip.content}}</td>
+            </tr>
+        </tbody> 
+        {%endfor%}
+    </table><br>
+    <a href="/health_tips/"><button style="background-color: blue; color: aliceblue; padding:10px; width:250px; margin-bottom: 15px;margin-right:25px;">Back to Health Tips</button></a>
+    
+</center> 
+
+{%endblock%}

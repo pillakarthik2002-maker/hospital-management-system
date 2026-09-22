@@ -1,0 +1,562 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Hospital Management</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body style="background:linear-gradient(135deg,#EAF4FF,#F8FBFF,#DDEEFF);">
+
+<nav class="navbar navbar-expand-lg"
+     style="margin:18px;
+            background:linear-gradient(to right,#0D47A1,#1565C0,#42A5F5);
+            border-radius:18px;
+            padding:12px 20px;
+            box-shadow:0px 8px 20px rgba(0,0,0,0.25);">
+
+<div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="/home/">
+
+        <img src="{% static 'images/logo.png' %}"
+             style="height:60px;width:70px;">
+
+        <div style="margin-left:12px;">
+
+            <h5 style="color:white;
+                       margin-bottom:0;
+                       font-weight:bold;">
+                Government Hospital
+            </h5>
+
+            <small style="color:#E3F2FD;">
+                Quality Healthcare for Every Citizen
+            </small>
+
+        </div>
+
+    </a>
+
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end"
+         id="navbarNav">
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item mx-1">
+                <a class="nav-link text-white fw-bold"
+                   href="/home/"
+                   style="border-radius:8px;padding:10px 16px;">
+                    🏠 Home
+                </a>
+            </li>
+
+            <li class="nav-item mx-1">
+                <a class="nav-link text-white fw-bold"
+                   href="/doctor/"
+                   style="border-radius:8px;padding:10px 16px;">
+                    👨‍💼 Admin
+                </a>
+            </li>
+
+            <li class="nav-item mx-1">
+                <a class="nav-link text-white fw-bold"
+                   href="/doctor_login/"
+                   style="border-radius:8px;padding:10px 16px;">
+                    👨‍⚕️ Doctors
+                </a>
+            </li>
+
+            <li class="nav-item mx-1">
+                <a class="nav-link text-white fw-bold"
+                   href="/patient/"
+                   style="border-radius:8px;padding:10px 16px;">
+                    🧑 Patient
+                </a>
+            </li>
+
+            <li class="nav-item mx-1">
+                <a class="nav-link text-white fw-bold"
+                   href="/reviewdata/"
+                   style="border-radius:8px;padding:10px 16px;">
+                    ⭐ Reviews
+                </a>
+            </li>
+
+            <li class="nav-item mx-1">
+                <a class="nav-link text-white fw-bold"
+                   href="/contact/"
+                   style="border-radius:8px;padding:10px 16px;">
+                    📞 Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</nav>
+
+{% block content %}
+
+<!-- ================= HERO ================= -->
+
+<section class="container mt-4">
+
+    <div class="row align-items-center bg-white rounded-4 shadow-sm p-4">
+
+        <div class="col-lg-6">
+
+            <span class="badge bg-primary mb-3">
+                Government Healthcare Services
+            </span>
+
+            <h1 class="fw-bold text-primary">
+                Quality Healthcare for Every Citizen
+            </h1>
+
+            <p class="text-secondary mt-3">
+                Government Hospital is committed to providing
+                affordable, accessible and quality healthcare
+                services to every citizen.
+            </p>
+
+            <div class="mt-4">
+
+                <a href="/add_appointment/"
+                   class="btn btn-primary me-2">
+
+                    <i class="bi bi-calendar-check"></i>
+                    Book Appointment
+
+                </a>
+
+                <a href="/viewdoctors/"
+                   class="btn btn-outline-primary">
+
+                    <i class="bi bi-person-badge"></i>
+                    Find Doctors
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-6 text-center mt-4 mt-lg-0">
+
+            <img
+                src="{% static 'images/mainbanner.png' %}"
+                class="img-fluid rounded-4"
+                style="max-height:320px;"
+                alt="Government Hospital"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK SERVICES ================= -->
+
+<section class="container mt-5">
+
+    <div class="text-center mb-4">
+
+        <small class="text-primary fw-bold">
+            QUICK ACCESS
+        </small>
+
+        <h2 class="fw-bold text-dark">
+            Hospital Services
+        </h2>
+
+        <p class="text-secondary">
+            Access important healthcare services easily.
+        </p>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        <!-- Appointment -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <a href="/add_appointment/"
+               class="text-decoration-none">
+
+                <div class="card h-100 border-0 shadow-sm p-3 text-center">
+
+                    <div class="text-primary fs-1">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                    </div>
+
+                    <h5 class="fw-bold text-dark">
+                        Appointments
+                    </h5>
+
+                    <p class="text-secondary">
+                        Book an appointment with our doctors.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Doctors -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <a href="/viewdoctors/"
+               class="text-decoration-none">
+
+                <div class="card h-100 border-0 shadow-sm p-3 text-center">
+
+                    <div class="text-primary fs-1">
+
+                        <i class="bi bi-person-badge"></i>
+
+                    </div>
+
+                    <h5 class="fw-bold text-dark">
+                        Our Doctors
+                    </h5>
+
+                    <p class="text-secondary">
+                        View doctors and their specializations.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Health Tips -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <a href="/viewtips/"
+               class="text-decoration-none">
+
+                <div class="card h-100 border-0 shadow-sm p-3 text-center">
+
+                    <div class="text-primary fs-1">
+
+                        <i class="bi bi-heart-pulse"></i>
+
+                    </div>
+
+                    <h5 class="fw-bold text-dark">
+                        Health Tips
+                    </h5>
+
+                    <p class="text-secondary">
+                        Learn useful tips for a healthy lifestyle.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Campaign -->
+
+        <div class="col-md-6 col-lg-3">
+
+            <a href="/viewcampaign/"
+               class="text-decoration-none">
+
+                <div class="card h-100 border-0 shadow-sm p-3 text-center">
+
+                    <div class="text-primary fs-1">
+
+                        <i class="bi bi-megaphone"></i>
+
+                    </div>
+
+                    <h5 class="fw-bold text-dark">
+                        Health Campaigns
+                    </h5>
+
+                    <p class="text-secondary">
+                        View health awareness campaigns.
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="container mt-5">
+
+    <div class="row align-items-center bg-white rounded-4 shadow-sm p-4">
+
+
+        <div class="col-lg-6">
+
+            <img
+                src="{% static 'images/mainbanner.png' %}"
+                class="img-fluid rounded-4"
+                alt="Hospital"
+            >
+
+        </div>
+
+
+        <div class="col-lg-6 mt-4 mt-lg-0">
+
+            <small class="text-primary fw-bold">
+                ABOUT OUR HOSPITAL
+            </small>
+
+            <h2 class="fw-bold mt-2">
+                Healthcare You Can Trust
+            </h2>
+
+            <p class="text-secondary">
+
+                Our Government Hospital provides accessible and
+                affordable healthcare services with experienced
+                doctors and dedicated healthcare professionals.
+
+            </p>
+
+            <p class="text-secondary">
+
+                Our hospital management system helps manage
+                doctors, appointments, health campaigns,
+                health tips and patient feedback efficiently.
+
+            </p>
+
+
+            <div class="row mt-3">
+
+                <div class="col-6 mb-3">
+
+                    <i class="bi bi-check-circle-fill text-primary"></i>
+
+                    Experienced Doctors
+
+                </div>
+
+
+                <div class="col-6 mb-3">
+
+                    <i class="bi bi-check-circle-fill text-primary"></i>
+
+                    Affordable Care
+
+                </div>
+
+
+                <div class="col-6">
+
+                    <i class="bi bi-check-circle-fill text-primary"></i>
+
+                    Patient Support
+
+                </div>
+
+
+                <div class="col-6">
+
+                    <i class="bi bi-check-circle-fill text-primary"></i>
+
+                    Health Awareness
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOSPITAL FACILITIES ================= -->
+
+<section class="container mt-5 mb-5">
+
+    <div class="text-center mb-4">
+
+        <small class="text-primary fw-bold">
+            OUR FACILITIES
+        </small>
+
+        <h2 class="fw-bold">
+            Healthcare Facilities
+        </h2>
+
+    </div>
+
+
+    <div class="row g-4">
+
+
+        <div class="col-md-4">
+
+            <div class="card border-0 shadow-sm h-100 p-4">
+
+                <i class="bi bi-hospital text-primary fs-1"></i>
+
+                <h5 class="fw-bold mt-3">
+                    Outpatient Care
+                </h5>
+
+                <p class="text-secondary">
+                    Medical consultation and treatment
+                    for patients.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card border-0 shadow-sm h-100 p-4">
+
+                <i class="bi bi-heart-pulse text-primary fs-1"></i>
+
+                <h5 class="fw-bold mt-3">
+                    Emergency Care
+                </h5>
+
+                <p class="text-secondary">
+                    Quick medical assistance for emergency
+                    healthcare needs.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-4">
+
+            <div class="card border-0 shadow-sm h-100 p-4">
+
+                <i class="bi bi-capsule text-primary fs-1"></i>
+
+                <h5 class="fw-bold mt-3">
+                    Pharmacy Services
+                </h5>
+
+                <p class="text-secondary">
+                    Essential medicines and pharmaceutical
+                    support.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+{% endblock %}
+<footer style="background:linear-gradient(to right,#0D47A1,#1976D2);
+               color:white;
+               margin-top:40px;
+               padding:25px;
+               text-align:center;">
+
+    <h5 style="font-weight:bold;">
+        Government Hospital Management System
+    </h5>
+
+    <p style="margin-top:10px;">
+        Providing Quality Healthcare Services with Care, Compassion and Excellence.
+    </p>
+
+    <hr style="background:white;height:2px;">
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <h6><b>Address</b></h6>
+            <p>
+                Government Hospital<br>
+                Vijayawada, Andhra Pradesh
+            </p>
+        </div>
+
+        <div class="col-md-4">
+            <h6><b>Contact</b></h6>
+            <p>
+                📞 +91 1234567899<br>
+                ✉ hospital@gmail.com
+            </p>
+        </div>
+
+        <div class="col-md-4">
+            <h6><b>Working Hours</b></h6>
+            <p>
+                Monday - Saturday<br>
+                9:00 AM - 6:00 PM
+            </p>
+        </div>
+
+    </div>
+
+    <hr style="background:white;height:2px;">
+
+    <p style="margin-bottom:0;">
+        © 2026 Government Hospital Management System | All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>

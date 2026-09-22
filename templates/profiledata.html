@@ -1,0 +1,107 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<center>
+
+<h2 style="margin-top:30px;
+           color:#0D47A1;
+           font-family:Cambria;
+           font-weight:bold;">
+    Search Doctor
+</h2>
+
+<form method="POST"
+      style="width:400px;
+             padding:25px;
+             background:white;
+             border-radius:12px;
+             box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+             margin-top:20px;">
+
+    {% csrf_token %}
+
+    <label style="font-weight:bold;">
+        Enter Doctor Name
+    </label>
+
+    <br><br>
+
+    <input type="text"
+           name="name"
+           placeholder="Enter Doctor Name"
+           style="width:100%;
+                  height:40px;
+                  padding:10px;
+                  border:1px solid gray;
+                  border-radius:5px;">
+
+    <br><br>
+
+    <button type="submit"
+            style="width:100%;
+                   height:45px;
+                   background:linear-gradient(to right,#1565C0,#42A5F5);
+                   color:white;
+                   border:none;
+                   border-radius:8px;
+                   font-size:16px;
+                   font-weight:bold;">
+        Search
+    </button>
+
+</form>
+
+<br><br>
+
+{% if doctor %}
+
+<table border="1"
+       cellpadding="10"
+       width="80%"
+       style="border-collapse:collapse;
+              text-align:center;
+              background:white;">
+
+    <tr style="background:#1976D2;color:white;">
+        <th>Doctor Name</th>
+        <th>Specialization</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>View Appointments
+    </tr>
+
+    {% for d in doctor %}
+
+    <tr>
+        <td>{{ d.name }}</td>
+        <td>{{ d.specialization }}</td>
+        <td>{{ d.email }}</td>
+        <td>{{ d.phone_number }}</td>
+        <td><a href="/myappointment/{{ d.name }}/">
+                <button style="background-color:#0D47A1;
+                   color:white;
+                   border:none;
+                   padding:10px 20px;
+                   border-radius:5px;">
+                 Show Appointment
+                </button>
+        </a>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% else %}
+
+<p style="color:red;font-weight:bold;">
+    No doctor found.
+</p>
+
+{% endif %}
+
+</center>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<center>
+
+<div style="width:650px;
+            margin-top:80px;
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            box-shadow:0px 8px 20px rgba(0,0,0,0.2);">
+
+    <h1 style="color:#28A745;
+               font-family:Cambria;
+               font-weight:bold;">
+        📩 Thank You!
+    </h1>
+
+    <hr style="width:80%;">
+
+    <h3 style="color:#0D47A1;">
+        Your Query Has Been Submitted Successfully
+    </h3>
+
+    <p style="font-size:18px;
+              color:#555;
+              line-height:30px;
+              margin-top:20px;">
+
+        Thank you for contacting <b>Government Hospital</b>.
+
+        <br><br>
+
+        We have received your message successfully.
+        Our support team will review your query and get back to you as soon as possible.
+
+        <br><br>
+
+        We appreciate your trust in our healthcare services.
+
+    </p>
+
+    <br>
+
+    <a href="/home/">
+        <button style="width:180px;
+                       height:45px;
+                       background:linear-gradient(to right,#1565C0,#42A5F5);
+                       color:white;
+                       border:none;
+                       border-radius:8px;
+                       font-size:16px;
+                       font-weight:bold;">
+            🏠 Home
+        </button>
+    </a>
+
+    &nbsp;&nbsp;
+
+    <a href="/contact/">
+        <button style="width:180px;
+                       height:45px;
+                       background:linear-gradient(to right,#28A745,#43A047);
+                       color:white;
+                       border:none;
+                       border-radius:8px;
+                       font-size:16px;
+                       font-weight:bold;">
+            📞 Contact Again
+        </button>
+    </a>
+
+</div>
+
+</center>
+
+{% endblock %}

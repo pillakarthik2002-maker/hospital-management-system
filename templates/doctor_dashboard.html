@@ -1,0 +1,158 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Welcome Section -->
+    <div class="p-4 mb-4 text-white rounded-4 shadow"
+         style="background:linear-gradient(135deg,#0D47A1,#1976D2,#42A5F5);">
+
+        <h2 class="fw-bold">
+            👨‍⚕️ Welcome, Dr. {{ doctor.name }}
+        </h2>
+
+        <p class="mb-0 fs-5">
+            {{ doctor.specialization }}
+        </p>
+
+    </div>
+
+
+    <!-- Profile -->
+    <div class="card border-0 shadow rounded-4 mb-4">
+
+        <div class="card-body p-4">
+
+            <h4 class="fw-bold mb-4" style="color:#0D47A1;">
+                👨‍⚕️ My Profile
+            </h4>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <strong>Name:</strong>
+                    {{ doctor.name }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Specialization:</strong>
+                    {{ doctor.specialization }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Email:</strong>
+                    {{ doctor.email }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <strong>Phone:</strong>
+                    {{ doctor.phone_number }}
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Appointments -->
+    <div class="card border-0 shadow rounded-4">
+
+        <div class="card-body p-4">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+                <h4 class="fw-bold mb-0" style="color:#0D47A1;">
+                    📅 My Appointments
+                </h4>
+
+                <span class="badge bg-primary">
+                    {{ appointments|length }} Appointments
+                </span>
+
+            </div>
+
+
+            {% if appointments %}
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-primary">
+
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for appointment in appointments %}
+
+                        <tr>
+
+                            <td>
+                                {{ appointment.patient_name }}
+                            </td>
+
+                            <td>
+                                {{ appointment.appointment_date }}
+                            </td>
+
+                            <td>
+                                {{ appointment.appointment_time }}
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            {% else %}
+
+            <div class="text-center py-4">
+
+                <h5 class="text-muted">
+                    No appointments found
+                </h5>
+
+                <p class="text-muted">
+                    You currently don't have any appointments.
+                </p>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- Logout -->
+
+    <div class="text-center mt-4">
+
+        <a href="/doctor_logout/"
+           class="btn btn-danger px-4 py-2">
+
+            🚪 Logout
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

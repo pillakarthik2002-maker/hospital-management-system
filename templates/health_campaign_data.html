@@ -1,0 +1,28 @@
+{%extends 'home.html'%}
+{%block content%}
+  <center> 
+    <table border="2" cellpadding="10" width="98%" style="background-color: hwb(25 18% 2% / 0.941); color: #0b0c0d; font-weight: bold;">  
+        <thead style="background-color: lab(64.29% 48.68 60.18 / 0.941); color: hsl(210, 43%, 97%); font-weight: bold; text-align: center;">
+            <th style="border:2px solid black;">Title</th>
+            <th style="border:2px solid black;">Content</th>
+            <th style="border:2px solid black;"> Date</th>
+            <th style="border:2px solid black;">Actions</th>
+        </thead>
+        {%for camp in health_campaigns%} 
+        <tbody>
+            <tr>
+                <td style="border:2px solid  black;">{{camp.title }}</td>
+                 <td style="border:2px solid black;">{{camp.content}}</td>
+                 <td style="border:2px solid black;">{{camp.date}}</td>
+                 <td style="border:2px solid black;">
+                    <a href="/update_health_campaign/{{camp.id}}"><button style="background-color: green; color: aliceblue; padding:10px; width:100px; margin-bottom: 15px;margin-left:50px; text-align: center;">UPDATE</button></a>
+                </td>
+            </tr>
+        </tbody> 
+        {%endfor%}
+    </table><br>
+    <a href="/health_campaign/"><button style="background-color: blue; color: aliceblue; padding:10px; width:250px; margin-bottom: 15px;margin-right:25px;">Back to Health Campaign</button></a>
+    
+</center> 
+
+{%endblock%}

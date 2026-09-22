@@ -1,0 +1,766 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- ================= DASHBOARD HEADING ================= -->
+
+    <div class="admin-heading">
+
+        <span>
+            HOSPITAL MANAGEMENT
+        </span>
+
+        <h2>
+            Administration Dashboard
+        </h2>
+
+        <p>
+            Manage important hospital activities and services.
+        </p>
+
+    </div>
+
+
+    <!-- ================= ADMIN CARDS ================= -->
+
+    <div class="row g-4">
+
+
+        <!-- Register Doctor -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/add_doctor/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon blue">
+                        <i class="bi bi-person-plus"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Register Doctor
+                        </h5>
+
+                        <p>
+                            Add a new doctor to the hospital
+                            management system.
+                        </p>
+
+                        <span>
+                            Register Doctor
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Doctor Directory -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/view_doctors/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon sky">
+                        <i class="bi bi-people"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Doctor Directory
+                        </h5>
+
+                        <p>
+                            View registered doctors and their
+                            professional information.
+                        </p>
+
+                        <span>
+                            View Doctors
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Appointments -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/view_appointments/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon purple">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Appointments
+                        </h5>
+
+                        <p>
+                            View and manage patient doctor
+                            appointments.
+                        </p>
+
+                        <span>
+                            View Appointments
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Patient Reviews -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/reviewdata/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon pink">
+                        <i class="bi bi-star"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Patient Reviews
+                        </h5>
+
+                        <p>
+                            Review feedback and ratings submitted
+                            by patients.
+                        </p>
+
+                        <span>
+                            View Reviews
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Health Tips -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/health_tips/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon teal">
+                        <i class="bi bi-heart-pulse"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Health Tips
+                        </h5>
+
+                        <p>
+                            Add and manage useful healthcare
+                            awareness information.
+                        </p>
+
+                        <span>
+                            Manage Health Tips
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Health Campaigns -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/health_campaign/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon cyan">
+                        <i class="bi bi-megaphone"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Health Campaigns
+                        </h5>
+
+                        <p>
+                            Create and manage hospital health
+                            awareness campaigns.
+                        </p>
+
+                        <span>
+                            Manage Campaigns
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Holiday Calendar -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/add_calendar/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon green">
+                        <i class="bi bi-calendar3"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Holiday Calendar
+                        </h5>
+
+                        <p>
+                            Add important holidays and hospital
+                            calendar information.
+                        </p>
+
+                        <span>
+                            Manage Calendar
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Career Opportunities -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/job_open/" class="admin-card-link">
+
+                <div class="admin-card">
+
+                    <div class="admin-icon orange">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Career Opportunities
+                        </h5>
+
+                        <p>
+                            Manage available hospital job
+                            opportunities.
+                        </p>
+
+                        <span>
+                            Manage Jobs
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Logout -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/logout/" class="admin-card-link">
+
+                <div class="admin-card logout-admin-card">
+
+                    <div class="admin-icon red">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Logout
+                        </h5>
+
+                        <p>
+                            Safely logout from the hospital
+                            administration portal.
+                        </p>
+
+                        <span>
+                            Logout
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= ADMIN DASHBOARD CSS ================= -->
+
+<style>
+
+.admin-welcome {
+
+    background: linear-gradient(
+        120deg,
+        #0d47a1,
+        #1565c0,
+        #42a5f5
+    );
+
+    color: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    box-shadow:
+        0 12px 30px rgba(13, 71, 161, 0.20);
+
+}
+
+.admin-label {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #dbeafe;
+
+}
+
+.admin-welcome h1 {
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    margin-top: 8px;
+
+    margin-bottom: 12px;
+
+}
+
+.admin-welcome p {
+
+    max-width: 750px;
+
+    color: #e3f2fd;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+
+}
+
+.admin-welcome-icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    min-width: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.16);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 42px;
+
+}
+
+
+/* ================= HEADING ================= */
+
+.admin-heading {
+
+    text-align: center;
+
+    margin: 55px 0 35px;
+
+}
+
+.admin-heading span {
+
+    color: #1976d2;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+}
+
+.admin-heading h2 {
+
+    color: #123c73;
+
+    font-weight: 800;
+
+    margin-top: 7px;
+
+}
+
+.admin-heading p {
+
+    color: #78909c;
+
+    margin-bottom: 0;
+
+}
+
+
+/* ================= CARD ================= */
+
+.admin-card-link {
+
+    display: block;
+
+    height: 100%;
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+.admin-card {
+
+    height: 100%;
+
+    background: white;
+
+    border: 1px solid #e3edf7;
+
+    border-radius: 17px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    box-shadow:
+        0 7px 22px rgba(0, 70, 130, 0.07);
+
+    transition: all 0.3s ease;
+
+}
+
+.admin-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 70, 130, 0.14);
+
+    border-color: #90caf9;
+
+}
+
+
+/* ================= ICON ================= */
+
+.admin-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    min-width: 58px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+}
+
+
+/* Icon Colors */
+
+.admin-icon.blue {
+
+    background: #e3f2fd;
+
+    color: #1565c0;
+
+}
+
+.admin-icon.sky {
+
+    background: #e1f5fe;
+
+    color: #0288d1;
+
+}
+
+.admin-icon.purple {
+
+    background: #ede7f6;
+
+    color: #673ab7;
+
+}
+
+.admin-icon.pink {
+
+    background: #fce4ec;
+
+    color: #c2185b;
+
+}
+
+.admin-icon.teal {
+
+    background: #e0f2f1;
+
+    color: #00897b;
+
+}
+
+.admin-icon.cyan {
+
+    background: #e0f7fa;
+
+    color: #00838f;
+
+}
+
+.admin-icon.green {
+
+    background: #e8f5e9;
+
+    color: #2e7d32;
+
+}
+
+.admin-icon.orange {
+
+    background: #fff3e0;
+
+    color: #ef6c00;
+
+}
+
+.admin-icon.red {
+
+    background: #ffebee;
+
+    color: #d32f2f;
+
+}
+
+
+/* ================= CARD TEXT ================= */
+
+.admin-card h5 {
+
+    color: #173f73;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.admin-card p {
+
+    color: #78909c;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+
+}
+
+.admin-card span {
+
+    color: #1976d2;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+.admin-card span i {
+
+    margin-left: 4px;
+
+}
+
+
+/* Logout */
+
+.logout-admin-card:hover {
+
+    border-color: #ef9a9a;
+
+}
+
+.logout-admin-card span {
+
+    color: #d32f2f;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 767px) {
+
+    .admin-welcome {
+
+        padding: 28px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+    .admin-welcome h1 {
+
+        font-size: 29px;
+
+    }
+
+    .admin-welcome-icon {
+
+        width: 70px;
+
+        height: 70px;
+
+        min-width: 70px;
+
+        font-size: 32px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .admin-welcome {
+
+        padding: 22px;
+
+    }
+
+    .admin-welcome h1 {
+
+        font-size: 25px;
+
+    }
+
+    .admin-card {
+
+        padding: 20px;
+
+    }
+
+}
+
+</style>
+
+{% endblock %}

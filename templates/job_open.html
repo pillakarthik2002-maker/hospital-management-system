@@ -1,0 +1,54 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<center>
+
+    <h3 style="margin-top:30px; color:darkblue;">
+        JOB OPENING FORM
+    </h3>
+
+    <form method="POST"
+          style="width:350px;
+                 border:2px solid black;
+                 padding:20px;
+                 border-radius:10px;
+                 background: white;
+                 margin-top:20px;">
+
+        {% csrf_token %}
+
+     <div style="margin-bottom:15px;" >
+        <label style="font-weight:bold; margin-left: 25px;">Job Role:</label>
+         {{ form.role}}
+    </div>
+     <div style="margin-bottom:15px;margin-left: 10px;" >
+        <label style="font-weight:bold;">Experience:</label>
+         {{ form.experience}}
+    </div>
+     <div style="margin-bottom:15px;margin-left: 5px;" >
+        <label style="font-weight:bold;">Current CTC:</label>
+         {{ form.current_ctc}}
+    </div>
+    <div style="margin-bottom:15px;" >
+        <label style="font-weight:bold;">Notice priod:</label>
+         {{ form.notice_period}}
+    </div>
+
+        <button type="submit"
+                style="width:100%;
+                       height:40px;
+                       background-color:blue;
+                       color:white;
+                       border:none;
+                       border-radius:5px;
+                       font-size:16px;
+                       font-weight:bold;">
+            Submit
+        </button>
+
+    </form>
+
+</center>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<center>
+
+<h2 style="margin-top:30px;
+           color:#0D47A1;
+           font-family:Cambria;
+           font-weight:bold;">
+    Hospital Holiday Calendar
+</h2>
+
+<p style="font-size:17px;
+          color:#555;
+          font-family:Cambria;">
+    View the list of official hospital holidays and important dates.
+</p>
+
+<div style="width:90%;
+            background:white;
+            border-radius:15px;
+            box-shadow:0px 8px 20px rgba(0,0,0,0.2);
+            padding:20px;
+            margin-top:20px;">
+
+<table width="100%"
+       cellpadding="12"
+       cellspacing="0"
+       style="border-collapse:collapse;
+              text-align:center;">
+
+    <thead style="background:linear-gradient(to right,#0D47A1,#1976D2);
+                  color:white;
+                  font-size:17px;">
+
+        <tr>
+            <th>Date</th>
+            <th>Holiday</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for calendar in view %}
+
+        <tr style="background:#F8FBFF;">
+
+            <td style="border:1px solid #ddd;">
+                {{ calendar.date }}
+            </td>
+
+            <td style="border:1px solid #ddd;">
+                {{ calendar.title }}
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<div style="width:80%;
+            background:white;
+            border-radius:12px;
+            padding:20px;
+            box-shadow:0px 5px 15px rgba(0,0,0,0.15);
+            margin-bottom:20px;">
+
+<h4 style="color:#0D47A1;
+           font-family:Cambria;
+           font-weight:bold;">
+    Holiday Information
+</h4>
+
+<p style="font-size:16px;
+          color:#555;
+          text-align:justify;
+          line-height:28px;">
+
+This calendar displays the official holidays observed by the hospital. Patients are advised to check these dates before planning visits or booking appointments to ensure smooth access to hospital services.
+
+</p>
+
+</div>
+
+<a href="/patient/">
+    <button style="width:220px;
+                   height:48px;
+                   background:linear-gradient(to right,#6C757D,#495057);
+                   color:white;
+                   border:none;
+                   border-radius:10px;
+                   font-size:16px;
+                   font-weight:bold;
+                   margin-right:15px;">
+        ← Patient Portal
+    </button>
+</a>
+
+<a href="/home/">
+    <button style="width:220px;
+                   height:48px;
+                   background:linear-gradient(to right,#1565C0,#42A5F5);
+                   color:white;
+                   border:none;
+                   border-radius:10px;
+                   font-size:16px;
+                   font-weight:bold;">
+        Home
+    </button>
+</a>
+
+</center>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+<br><br>
+
+{% if appoint %}
+
+<table width="90%"
+       cellpadding="10"
+       cellspacing="0"
+       style="border-collapse:collapse;
+              text-align:center;
+              background:white;
+              box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+              margin-left: 75px;">
+
+    <tr style="background:#1976D2;color:white;">
+        <th>Patient Name</th>
+        <th>Doctor Name</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time</th>
+    </tr>
+
+    {% for app in appoint %}
+
+    <tr>
+
+        <td style="border:1px solid #ddd;">
+            {{ app.patient_name }}
+        </td>
+
+        <td style="border:1px solid #ddd;">
+            {{ app.doctor_name }}
+        </td>
+
+        <td style="border:1px solid #ddd;">
+            {{ app.appointment_date }}
+        </td>
+
+        <td style="border:1px solid #ddd;">
+            {{ app.appointment_time }}
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% elif request.method == "POST" %}
+
+<h3 style="color:red;">
+    No appointments found.
+</h3>
+
+{% endif %}
+
+<br>
+
+<a href="/doctor/">
+    <button style="width:180px;
+                   height:45px;
+                   background:#6c757d;
+                   color:white;
+                   border:none;
+                   border-radius:8px;
+                   font-weight:bold;">
+        ← Back
+    </button>
+</a>
+
+</center>
+
+{% endblock %}

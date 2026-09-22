@@ -1,0 +1,171 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<center>
+
+<h2 style="margin-top:30px;
+           color:#0D47A1;
+           font-family:Cambria;
+           font-weight:bold;">
+    ⭐ Patient Feedback & Reviews
+</h2>
+
+<p style="color:#666;
+          font-size:18px;">
+    Patient opinions and satisfaction ratings about hospital services.
+</p>
+
+<!-- Statistics -->
+
+<table cellpadding="20" style="margin-top:20px;">
+
+<tr>
+
+<td>
+
+<div style="width:220px;
+            background:#1565C0;
+            color:white;
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0px 5px 15px rgba(0,0,0,0.2);">
+
+<h3>Total Reviews</h3>
+
+<h2>{{ data|length }}</h2>
+
+</div>
+
+</td>
+
+<td>
+
+<div style="width:220px;
+            background:#2E7D32;
+            color:white;
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0px 5px 15px rgba(0,0,0,0.2);">
+
+<h3>Patient Satisfaction</h3>
+
+<h2>★★★★★</h2>
+
+</div>
+
+</td>
+
+</tr>
+
+</table>
+
+<br>
+
+<div style="width:98%;
+            background:white;
+            border-radius:15px;
+            padding:20px;
+            box-shadow:0px 8px 20px rgba(0,0,0,0.2);">
+
+<table width="100%"
+       cellpadding="12"
+       cellspacing="0"
+       style="border-collapse:collapse;
+              text-align:center;">
+
+<thead style="background:linear-gradient(to right,#0D47A1,#1976D2);
+              color:white;">
+
+<tr>
+
+<th>Patient</th>
+<th>Doctor</th>
+<th>Feedback</th>
+<th>Rating</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for job in data %}
+
+<tr style="background:#F8FBFF;">
+
+<td style="border:1px solid #ddd;">
+{{ job.patient_name }}
+</td>
+
+<td style="border:1px solid #ddd;">
+{{ job.doctor_name }}
+</td>
+
+<td style="border:1px solid #ddd;text-align:left;">
+{{ job.feedback }}
+</td>
+
+<td style="border:1px solid #ddd;">
+
+{% if job.rating == 10%}
+<span style="color:green;font-weight:bold;">
+★★★★★
+</span>
+
+{% elif job.rating == 9 %}
+<span style="color:#28a745;font-weight:bold;">
+★★★★☆
+</span>
+
+{% elif job.rating == 8%}
+<span style="color:#ff9800;font-weight:bold;">
+★★★☆☆
+</span>
+
+{% elif job.rating == 6 %}
+<span style="color:#ff5722;font-weight:bold;">
+★★☆☆☆
+</span>
+
+{% else %}
+<span style="color:red;font-weight:bold;">
+★☆☆☆☆
+</span>
+
+{% endif %}
+
+</td>
+
+<td style="border:1px solid #ddd;">
+{{ job.date }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<a href="/doctor/">
+<button style="width:220px;
+               height:45px;
+               background:linear-gradient(to right,#1565C0,#42A5F5);
+               color:white;
+               border:none;
+               border-radius:8px;
+               font-weight:bold;">
+← Back to Dashboard
+</button>
+</a>
+
+</center>
+
+{% endblock %}

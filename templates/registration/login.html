@@ -1,0 +1,117 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="container mt-5 mb-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card shadow-lg border-0">
+
+                <!-- Header -->
+                <div class="card-header text-center"
+                     style="
+                        background:linear-gradient(to right,#0D47A1,#1976D2);
+                        color:white;
+                        padding:25px;
+                     ">
+
+                    <h3 class="mb-1">
+                        👨‍⚕️ Admin Login
+                    </h3>
+
+                    <p class="mb-0">
+                        Login to access the Admin Portal
+                    </p>
+
+                </div>
+
+
+                <!-- Login Form -->
+                <div class="card-body p-4">
+
+                    {% if message %}
+
+                        <div class="alert alert-danger text-center">
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+
+                        <!-- Username -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                name="username"
+                                class="form-control"
+                                placeholder="Enter username"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Password -->
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control"
+                                placeholder="Enter password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Login Button -->
+                        <button
+                            type="submit"
+                            class="btn w-100"
+                            style="
+                                background:#1565C0;
+                                color:white;
+                                height:48px;
+                                font-weight:bold;
+                            "
+                        >
+
+                            <i class="bi bi-box-arrow-in-right"></i>
+
+                            Login
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

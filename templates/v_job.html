@@ -1,0 +1,139 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<center>
+
+<h2 style="margin-top:30px;
+           color:#0D47A1;
+           font-family:Cambria;
+           font-weight:bold;">
+    Current Job Openings
+</h2>
+
+<p style="font-size:17px;
+          color:#555;
+          font-family:Cambria;">
+    Explore the latest career opportunities available at our hospital.
+</p>
+
+<div style="width:98%;
+            background:white;
+            border-radius:15px;
+            box-shadow:0px 8px 20px rgba(0,0,0,0.2);
+            padding:20px;
+            margin-top:20px;">
+
+<table width="100%"
+       cellpadding="12"
+       cellspacing="0"
+       style="border-collapse:collapse;
+              text-align:center;">
+
+    <thead style="background:linear-gradient(to right,#0D47A1,#1976D2);
+                  color:white;
+                  font-size:17px;">
+
+        <tr>
+            <th>Job Role</th>
+            <th>Experience</th>
+            <th>Current CTC</th>
+            <th>Notice Period</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for job in tips %}
+
+        <tr style="background:#F8FBFF;">
+
+            <td style="border:1px solid #ddd;">{{ job.role }}</td>
+
+            <td style="border:1px solid #ddd;">{{ job.experience }}</td>
+
+            <td style="border:1px solid #ddd;">{{ job.current_ctc }}</td>
+
+            <td style="border:1px solid #ddd;">{{ job.notice_period }}</td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<div style="width:80%;
+            background:white;
+            border-radius:12px;
+            padding:20px;
+            box-shadow:0px 5px 15px rgba(0,0,0,0.15);
+            margin-bottom:20px;">
+
+<h4 style="color:#0D47A1;
+           font-family:Cambria;
+           font-weight:bold;">
+    Career Opportunities
+</h4>
+
+<p style="font-size:16px;
+          color:#555;
+          text-align:justify;
+          line-height:28px;">
+
+Our hospital welcomes dedicated healthcare professionals to join our team. Browse the available positions, review the eligibility requirements, and apply for opportunities that match your qualifications and experience.
+
+</p>
+
+</div>
+
+<a href="/download">
+    <button style="width:220px;
+                   height:48px;
+                   background:linear-gradient(to right,#1565C0,#42A5F5);
+                   color:white;
+                   border:none;
+                   border-radius:10px;
+                   font-size:16px;
+                   font-weight:bold;
+                   margin-right:15px;">
+        Download Data
+    </button>
+</a>
+
+<a href="/patient/">
+    <button style="width:220px;
+                   height:48px;
+                   background:linear-gradient(to right,#6C757D,#495057);
+                   color:white;
+                   border:none;
+                   border-radius:10px;
+                   font-size:16px;
+                   font-weight:bold;
+                   margin-right:15px;">
+        ← Patient Portal
+    </button>
+</a>
+
+<a href="/home/">
+    <button style="width:220px;
+                   height:48px;
+                   background:linear-gradient(to right,#2E7D32,#43A047);
+                   color:white;
+                   border:none;
+                   border-radius:10px;
+                   font-size:16px;
+                   font-weight:bold;">
+        Home
+    </button>
+</a>
+
+</center>
+
+{% endblock %}

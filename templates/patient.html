@@ -1,0 +1,721 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <!-- ================= SECTION HEADING ================= -->
+
+    <div class="patient-heading">
+
+        <span>
+            PATIENT SERVICES
+        </span>
+
+        <h2>
+            Quick Access
+        </h2>
+
+        <p>
+            Choose a service to continue.
+        </p>
+
+    </div>
+
+
+    <!-- ================= SERVICE CARDS ================= -->
+
+    <div class="row g-4">
+
+
+        <!-- Book Appointment -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/add_appointment/" class="patient-card-link">
+
+                <div class="patient-card">
+
+                    <div class="patient-icon blue">
+                        <i class="bi bi-calendar-plus"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Book Appointment
+                        </h5>
+
+                        <p>
+                            Schedule an appointment with
+                            a hospital doctor.
+                        </p>
+
+                        <span>
+                            Book Now
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Doctor Directory -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/viewdoctors/" class="patient-card-link">
+
+                <div class="patient-card">
+
+                    <div class="patient-icon sky">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Doctor Directory
+                        </h5>
+
+                        <p>
+                            View available doctors and their
+                            areas of specialization.
+                        </p>
+
+                        <span>
+                            View Doctors
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Health Advisory -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/viewtips/" class="patient-card-link">
+
+                <div class="patient-card">
+
+                    <div class="patient-icon teal">
+                        <i class="bi bi-heart-pulse"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Health Advisory
+                        </h5>
+
+                        <p>
+                            Read useful healthcare tips and
+                            wellness information.
+                        </p>
+
+                        <span>
+                            View Health Tips
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Hospital Holidays -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/viewcalendar/" class="patient-card-link">
+
+                <div class="patient-card">
+
+                    <div class="patient-icon green">
+                        <i class="bi bi-calendar3"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Hospital Holidays
+                        </h5>
+
+                        <p>
+                            Check important hospital holidays
+                            and calendar information.
+                        </p>
+
+                        <span>
+                            View Calendar
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Feedback -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/review/" class="patient-card-link">
+
+                <div class="patient-card">
+
+                    <div class="patient-icon orange">
+                        <i class="bi bi-star"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Patient Feedback
+                        </h5>
+
+                        <p>
+                            Share your experience and provide
+                            valuable hospital feedback.
+                        </p>
+
+                        <span>
+                            Give Feedback
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- Health Campaigns -->
+
+        <div class="col-md-6 col-lg-4">
+
+            <a href="/viewcampaign/" class="patient-card-link">
+
+                <div class="patient-card">
+
+                    <div class="patient-icon purple">
+                        <i class="bi bi-megaphone"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Health Campaigns
+                        </h5>
+
+                        <p>
+                            Stay informed about public health
+                            awareness campaigns.
+                        </p>
+
+                        <span>
+                            View Campaigns
+                            <i class="bi bi-arrow-right"></i>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= INFORMATION SECTION ================= -->
+
+    <div class="patient-info">
+
+        <div class="patient-info-icon">
+            <i class="bi bi-shield-check"></i>
+        </div>
+
+        <div>
+
+            <h4>
+                Patient Services
+            </h4>
+
+            <p>
+                The Patient Portal provides quick access to essential
+                hospital services, including appointment booking,
+                doctor information, health tips, hospital holidays,
+                patient feedback, and public health awareness programs.
+                Our goal is to make healthcare information easier to
+                access and improve the overall patient experience.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= PATIENT PAGE CSS ================= -->
+
+<style>
+
+.patient-welcome {
+
+    background: linear-gradient(
+        120deg,
+        #00695c,
+        #00897b,
+        #26a69a
+    );
+
+    color: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 105, 92, 0.20);
+
+}
+
+.patient-label {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #dff7f3;
+
+}
+
+.patient-welcome h1 {
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    margin-top: 8px;
+
+    margin-bottom: 12px;
+
+}
+
+.patient-welcome p {
+
+    max-width: 750px;
+
+    color: #e0f2f1;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+
+}
+
+.patient-welcome-icon {
+
+    width: 90px;
+
+    height: 90px;
+
+    min-width: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.16);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 42px;
+
+}
+
+
+/* ================= HEADING ================= */
+
+.patient-heading {
+
+    text-align: center;
+
+    margin: 55px 0 35px;
+
+}
+
+.patient-heading span {
+
+    color: #00897b;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+}
+
+.patient-heading h2 {
+
+    color: #174b47;
+
+    font-weight: 800;
+
+    margin-top: 7px;
+
+}
+
+.patient-heading p {
+
+    color: #78909c;
+
+    margin-bottom: 0;
+
+}
+
+
+/* ================= CARD ================= */
+
+.patient-card-link {
+
+    display: block;
+
+    height: 100%;
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+.patient-card {
+
+    height: 100%;
+
+    background: white;
+
+    border: 1px solid #e1eeee;
+
+    border-radius: 17px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    box-shadow:
+        0 7px 22px rgba(0, 80, 70, 0.07);
+
+    transition: all 0.3s ease;
+
+}
+
+.patient-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 80, 70, 0.14);
+
+    border-color: #80cbc4;
+
+}
+
+
+/* ================= ICON ================= */
+
+.patient-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    min-width: 58px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+}
+
+
+/* Icon Colors */
+
+.patient-icon.blue {
+
+    background: #e3f2fd;
+
+    color: #1565c0;
+
+}
+
+.patient-icon.sky {
+
+    background: #e1f5fe;
+
+    color: #0288d1;
+
+}
+
+.patient-icon.teal {
+
+    background: #e0f2f1;
+
+    color: #00897b;
+
+}
+
+.patient-icon.green {
+
+    background: #e8f5e9;
+
+    color: #2e7d32;
+
+}
+
+.patient-icon.orange {
+
+    background: #fff3e0;
+
+    color: #ef6c00;
+
+}
+
+.patient-icon.purple {
+
+    background: #ede7f6;
+
+    color: #673ab7;
+
+}
+
+
+/* ================= CARD TEXT ================= */
+
+.patient-card h5 {
+
+    color: #174b47;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.patient-card p {
+
+    color: #78909c;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 12px;
+
+}
+
+.patient-card span {
+
+    color: #00897b;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+.patient-card span i {
+
+    margin-left: 4px;
+
+}
+
+
+/* ================= INFO ================= */
+
+.patient-info {
+
+    margin-top: 50px;
+
+    margin-bottom: 20px;
+
+    background: white;
+
+    border: 1px solid #e1eeee;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    box-shadow:
+        0 7px 20px rgba(0, 80, 70, 0.07);
+
+}
+
+.patient-info-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 14px;
+
+    background: #e0f2f1;
+
+    color: #00796b;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+}
+
+.patient-info h4 {
+
+    color: #174b47;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.patient-info p {
+
+    color: #607d8b;
+
+    line-height: 1.7;
+
+    margin-bottom: 0;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 767px) {
+
+    .patient-welcome {
+
+        padding: 28px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+    .patient-welcome h1 {
+
+        font-size: 29px;
+
+    }
+
+    .patient-welcome-icon {
+
+        width: 70px;
+
+        height: 70px;
+
+        min-width: 70px;
+
+        font-size: 32px;
+
+    }
+
+    .patient-info {
+
+        flex-direction: column;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .patient-welcome {
+
+        padding: 22px;
+
+    }
+
+    .patient-welcome h1 {
+
+        font-size: 25px;
+
+    }
+
+    .patient-card {
+
+        padding: 20px;
+
+    }
+
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<center>
+
+    <h3 style="margin-top:30px; color:darkblue;">
+        UPDATE DOCTOR RECORD
+    </h3>
+
+    <form method="POST"
+          style="width:350px;
+                 border:2px solid black;
+                 padding:20px;
+                 border-radius:10px;
+                 background-color:#f5f5f5;
+                 margin-top:20px;">
+
+        {% csrf_token %}
+    <div style="margin-bottom:15px;" >
+        <label style="font-weight:bold;">Employee Id:</label>
+         {{ form.name}}
+    </div>
+    <div style="margin-bottom:15px;" >
+        <label style="font-weight:bold;">Designation:</label>
+         {{ form.specialization}}
+    </div>
+    <div style="margin-bottom:15px;" >
+        <label style="font-weight:bold;">Date of Join:</label>
+         {{ form.email}}
+    </div>
+    <div style="margin-bottom:15px;" >
+        <label style="font-weight:bold;">Department:</label>
+         {{ form.phone_number}}
+    </div>
+
+        <button type="submit"
+                style="width:100%;
+                       height:40px;
+                       background-color:blue;
+                       color:white;
+                       border:none;
+                       border-radius:5px;
+                       font-size:16px;
+                       font-weight:bold;">
+            Submit
+        </button>
+
+    </form>
+
+</center>
+
+{% endblock %}
